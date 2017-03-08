@@ -22,10 +22,15 @@ export default class Countdown extends Component {
                     this.setState({count: 0})
                 case 'paused':
                     clearInterval(this.timer)
-                    this.Timer = undefined
+                    this.timer = undefined
                     break
     		}
     	}
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer)
+        this.timer = undefined
     }
 
     startTimer = () => {
@@ -34,6 +39,11 @@ export default class Countdown extends Component {
     		this.setState({
 				count: newCount >= 0 ? newCount : 0
 			})
+
+            if (newCount=== 0) {
+                this.setState({countdownStatus: 'stopped'})
+            }
+
     	}, 1000)
     }
 
@@ -60,6 +70,7 @@ export default class Countdown extends Component {
         }
 		return (
 			<div>
+                <h1 className="page-title">Countdown App</h1>
 				<Clock totalSeconds={count}/>
                 {renderControlArea()}
 			</div>	
