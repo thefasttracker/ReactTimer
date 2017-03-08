@@ -29,7 +29,6 @@ export default class Clock extends Component {
 				<span className="clock-text">
 					{this.formatSeconds(totalSeconds)}	
 				</span>
-				
 			</div>
 		)
 	}
