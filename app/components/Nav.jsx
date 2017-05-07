@@ -21,7 +21,7 @@ export default () => {
 			<div className="top-bar-right">
 				<ul className="menu">
 					<li className = "menu-text">
-						Created by <a href="https://github.com/thefasttracker" target="_blank">Oleg Novikov</a>
+						<a href="https://github.com/thefasttracker/ReactTimer" target="_blank">Github</a>
 					</li>
 				</ul>
 			</div>
